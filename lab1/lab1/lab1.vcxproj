@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NegrobovCrypto.cpp" />
+    <ClCompile Include="NegrobovHack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NegrobovCrypto.h" />
+    <ClInclude Include="NegrobovHack.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

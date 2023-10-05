@@ -1,5 +1,6 @@
 #include "Windows.h"
 #include "NegrobovCrypto.h"
+#include "NegrobovHack.h"
 #include "utils.h"
 
 const bool encripting = true;
@@ -18,10 +19,11 @@ int main() {
 	while (true) {
 		std::cout << "1: Шифровка файла" << std::endl
 			<< "2: Дешифровка файла" << std::endl
+			<< "3: Взлом ключа" << std::endl
 			<< "0: Выход из программы" << std::endl
 			<< "-> ";
 
-		choice = get_num_value(0, 2);
+		choice = get_num_value(0, 3);
 		do_command(choice);
 		if (choice == 0) break;
 	}
@@ -43,6 +45,13 @@ void do_command(unsigned int choice) {
 			std::cout << "Файл был удачно расшифрован" << std::endl;
 		else
 			std::cout << "Не удалось расшифровать файл" << std::endl;
+	}
+
+	else if (choice == 3) {
+		if (hack_key())
+			std::cout << "Файл был взломан" << std::endl;
+		else
+			std::cout << "Не удалось взломать файл" << std::endl;
 	}
 
 	else if (choice == 0)
